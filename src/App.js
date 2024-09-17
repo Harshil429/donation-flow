@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Donate from "./components/Donate";
+import DonateTab from "./components/Buttons/DonateTab";
 
-function App() {
+const donationTypes = ["monthly", "once"];
+
+const App = () => {
+  const [donationType, setDonationType] = useState(donationTypes[0]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="tabGroup">
+        {donationTypes.map((type) => (
+          <DonateTab
+            key={type}
+            type={type}
+            currentType={donationType}
+            onClick={() => setDonationType(type)}
+          />
+        ))}
+      </div>
+      <Donate donationType={donationType} setDonationType={setDonationType} />
     </div>
   );
-}
+};
 
 export default App;
