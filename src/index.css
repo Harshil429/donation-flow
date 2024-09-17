@@ -16,139 +16,141 @@ button {
   margin: auto;
   width: 88.5%;
   padding: 2.5rem 2rem;
-}
 
-.container .btnTab {
-  background-color: #103472;
-  color: #fff;
-  border: 1px solid #b9b9b9;
-  border-bottom: 0;
-  padding: 1rem 2rem;
-  font-weight: bold;
-  font-size: 15px;
-  letter-spacing: 0.2px;
-}
+  .btnTab {
+    background-color: #103472;
+    color: #fff;
+    border: 1px solid #b9b9b9;
+    border-bottom: 0;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.2px;
 
-.container .btnTab.active {
-  background-color: #fff;
-  color: #103472;
-  padding-top: 1.5rem;
-  margin-right: 0.25rem;
-  position: relative;
-  top: 0.1rem;
-}
+    &.active {
+      background-color: #fff;
+      color: #103472;
+      padding-top: 1.5rem;
+      margin-right: 0.25rem;
+      position: relative;
+      top: 0.1rem;
 
-.container .btnTab.active.donateOnceActive {
-  margin-left: 0.25rem;
+      &.donateOnceActive {
+        margin-left: 0.25rem;
+      }
+    }
+  }
 }
 
 .donationCard {
   border: 1px solid #b9b9b9;
   box-shadow: -1px 1px 14px -2px rgba(0, 0, 0, 0.5);
+
+  #main {
+    padding: 2.5rem;
+
+    .donationAmountGroup {
+      margin: 1.25rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .btnAmount,
+      .customAmount,
+      .btnDonate {
+        padding: 0.9rem 2.75rem;
+        font-weight: bold;
+        font-size: 18px;
+
+        &.btnAmount {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+
+          .amountText {
+            margin-right: 5px;
+          }
+
+          &.active {
+            background-color: #339aa0;
+            border: 2px solid #339aa0;
+            color: #fff;
+            padding: 0.9rem 2rem;
+          }
+        }
+
+        &.customAmount {
+          width: 13%;
+          padding-right: 1rem;
+          padding-left: 1rem;
+        }
+
+        &.btnDonate {
+          background-color: #f49223;
+          border: 1px solid #f49223;
+
+          span {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .caption {
+      background-color: #face9d;
+      padding: 1.75rem 1.5rem;
+      margin-top: 1.5rem;
+      font-size: 18px;
+    }
+  }
+
+  #footer {
+    background-color: #eaedf4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+
+    p {
+      text-decoration: underline;
+      text-underline-position: under;
+      cursor: pointer;
+    }
+
+    span {
+      font-size: 13px;
+      color: #7b7c80;
+      font-weight: 600;
+      margin: 1.5rem;
+    }
+
+    img {
+      margin-right: 1.5rem;
+    }
+
+    .directDebitCard {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
 }
 
-.donationCard #main {
-  padding: 2.5rem;
-}
+input[type="number"] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 
-#main .donationAmountGroup {
-  margin: 1.25rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-#main .caption {
-  background-color: #face9d;
-  padding: 1.75rem 1.5rem;
-  margin-top: 1.5rem;
-  font-size: 18px;
-}
-
-.donationAmountGroup .btnAmount,
-.donationAmountGroup .customAmount,
-.donationAmountGroup .btnDonate {
-  padding: 0.9rem 2.75rem;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.donationAmountGroup .customAmount {
-  width: 13%;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-.donationAmountGroup .btnAmount,
-.donationAmountGroup .btnDonate {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.donationAmountGroup .btnAmount .amountText {
-  margin-right: 5px;
-}
-
-.btnDonate span {
-  margin-right: 10px;
-}
-
-.donationAmountGroup .btnAmount.active {
-  background-color: #339aa0;
-  border: 2px solid #339aa0;
-  color: #fff;
-  padding: 0.9rem 2rem;
-}
-
-.donationAmountGroup .btnDonate {
-  background-color: #f49223;
-  border: 1px solid #f49223;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-input[type="number"]::placeholder {
-  color: #000;
-  font-size: 16px;
-}
-
-.donationCard #footer {
-  background-color: #eaedf4;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-}
-#footer p {
-  text-decoration: underline;
-  text-underline-position: under;
-  cursor: pointer;
-}
-
-#footer span {
-  font-size: 13px;
-  color: #7b7c80;
-  font-weight: 600;
-  margin: 1.5rem;
-}
-
-#footer img {
-  margin-right: 1.5rem;
-}
-
-#footer .directDebitCard {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  &::placeholder {
+    color: #000;
+    font-size: 16px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -209,6 +211,20 @@ input[type="number"]::placeholder {
 
   .donationAmountGroup .btnAmount {
     flex: 25%;
+  }
+
+  .donationCard {
+    & #main {
+      & .donationAmountGroup {
+        & .btnAmount,
+        & .customAmount,
+        & .btnDonate {
+          &.customAmount {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 
   .donationAmountGroup .btnAmount.active {
